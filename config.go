@@ -11,10 +11,10 @@ type Config struct {
 	Environment string `env:"ENVIRONMENT" validate:"required|in:prod,dev,test"`
 }
 
-// ParseConfig creates an instance of needed struct. It is necesary struct contains env and validate tags to be parsed correctly
-func ParseConfig[T any]() (T, error) {
+// ParseConfigWithOptions creates an instance of needed struct. It is necesary struct contains env and validate tags to be parsed correctly
+func ParseConfigWithOptions[T any](opts env.Options) (T, error) {
 	var instance T
-	if err := env.Parse(&instance); err != nil {
+	if err := env.ParseWithOptions(&instance, opts); err != nil {
 		return instance, err
 	}
 
