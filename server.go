@@ -9,6 +9,8 @@ import (
 	"github.com/manicar2093/winter/logger"
 	"github.com/manicar2093/winter/stages"
 	"github.com/manicar2093/winter/validator"
+
+	echoSwagger "github.com/swaggo/echo-swagger"
 )
 
 type (
@@ -63,7 +65,8 @@ func (c *Server) configEcho() {
 	c.Use(middleware.CORS())
 	c.Validator = c.gookitValidator
 	c.HTTPErrorHandler = apperrors.HandlerWEcho
-
+	logger.GetLogger().Debug("swagger docs available")
+	c.GET("/swagger/*", echoSwagger.WrapHandler)
 }
 
 func (c *Server) configControllers() {
