@@ -25,7 +25,7 @@ type (
 
 func HandlerWEcho(err error, ctx echo.Context) {
 	code, body := handleErrorType(err) //nolint:varnamelen
-	fields := logrus.Fields{"response": body, "request_id": ctx.Request().Header.Get("X-Request-Id")}
+	fields := logrus.Fields{"response": body}
 	stack, ok := hasStackTrace(err)
 	if ok {
 		fields["stack"] = stack
