@@ -1,3 +1,9 @@
+## v0.4.2 (2024-11-26)
+
+### Fix
+
+- port validator assign sign
+
 ## v0.4.1 (2024-11-26)
 
 ### Fix
