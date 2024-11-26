@@ -3,7 +3,7 @@ package validator_test
 import (
 	"net/http"
 
-	"github.com/bxcodec/faker/v3"
+	"github.com/go-faker/faker/v4"
 	"github.com/google/uuid"
 	"github.com/gookit/validate"
 	"github.com/manicar2093/goption"

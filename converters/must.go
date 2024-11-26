@@ -6,3 +6,7 @@ func Must[T any](ret T, err error) T { //nolint:ireturn
 	}
 	return ret
 }
+
+func ToPointer[T any](d T) *T {
+	return &d
+}
