@@ -5,7 +5,6 @@ go 1.22
 toolchain go1.23.2
 
 require (
-	github.com/bsm/ginkgo/v2 v2.12.0
 	github.com/caarlos0/env/v10 v10.0.0
 	github.com/coditory/go-errors v0.0.6
 	github.com/go-faker/faker/v4 v4.5.0
