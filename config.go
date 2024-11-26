@@ -9,7 +9,7 @@ import (
 type Config struct {
 	// Environment is used to get data using ParseConfig
 	Environment string `env:"ENVIRONMENT" validate:"required|in:prod,dev,test"`
-	Port        int    `env:"PORT" validate:"required,min=1,max=65535"`
+	Port        int    `env:"PORT" validate:"required|min=1|max=65535"`
 }
 
 // ParseConfigWithOptions creates an instance of needed struct passing some env.Options. It is necesary struct contains env and validate tags to be parsed correctly
