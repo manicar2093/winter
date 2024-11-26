@@ -1,3 +1,12 @@
+## v0.4.0 (2024-11-26)
+
+### Feat
+
+- add new faker and converter
+- add request id on error response
+- add redis and gorm connections
+- add port to config
+
 ## v0.3.1 (2024-03-28)
 
 ### Refactor
