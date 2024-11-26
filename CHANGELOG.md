@@ -1,3 +1,9 @@
+## v0.4.3 (2024-11-26)
+
+### Fix
+
+- remove request_id from apperrors converter
+
 ## v0.4.2 (2024-11-26)
 
 ### Fix
