@@ -1,6 +1,8 @@
 package winter
 
-import "github.com/labstack/echo/v4"
+import (
+	"github.com/labstack/echo/v4"
+)
 
 func BindAndValidate(ctx echo.Context, i any) error {
 	if err := ctx.Bind(i); err != nil {
@@ -10,4 +12,8 @@ func BindAndValidate(ctx echo.Context, i any) error {
 		return err
 	}
 	return nil
+}
+
+func GetFromEchoContext[T any](ctx echo.Context, key string) T {
+	return ctx.Get(key).(T)
 }
