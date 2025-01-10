@@ -31,7 +31,7 @@ func NewGooKitValidator() *GooKitValidator {
 // el momento aún es experimental, pero funciona para lo que se requiere.
 func (c *GooKitValidator) ValidateStruct(toValidate any, scene ...string) error {
 	v := c.GetConfiguredValidator(toValidate, scene...)
-	if v.Validate() {
+	if v.Validate(scene...) {
 		return nil
 	}
 	return &ValidationError{Errors: v.Errors}
