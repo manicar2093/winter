@@ -41,16 +41,16 @@ func (c *GooKitValidator) Validate(i interface{}) error {
 
 // GetConfiguredValidator returns validate.Validation instance with required_uuid validator
 func (c *GooKitValidator) GetConfiguredValidator(toValidate any, scene ...string) *validate.Validation {
-	v := validate.Struct(toValidate, scene...) //nolint:varnamelen
-	v.StopOnError = c.StopOnError
-	v.AddMessages(map[string]string{
+	validator := validate.Struct(toValidate, scene...) //nolint:varnamelen
+	validator.StopOnError = c.StopOnError
+	validator.AddMessages(map[string]string{
 		"uuid":          uuidNotValidError,
 		"isUUID":        uuidNotValidError,
 		"required":      requiredErrorMessage,
 		requiredUuidKey: requiredErrorMessage,
 	})
-	v.AddValidator(requiredUuidKey, func(val any) bool {
+	validator.AddValidator(requiredUuidKey, func(val any) bool {
 		return val != uuid.Nil
 	})
-	return v
+	return validator
 }
