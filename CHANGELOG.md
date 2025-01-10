@@ -1,3 +1,15 @@
+## v0.5.0 (2025-01-10)
+
+### Feat
+
+- add scene and validator getter for further uses
+- add getFromEchoContext function
+- add BindAndValidate function
+
+### Fix
+
+- add scenes to validate call
+
 ## v0.4.3 (2024-11-26)
 
 ### Fix
