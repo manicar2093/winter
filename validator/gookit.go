@@ -27,10 +27,10 @@ func NewGooKitValidator() *GooKitValidator {
 // Se cuenta con un validador custom:
 //   - required_uuid
 //
-// Este fue creado con el proposito de validar que un tipo uuid.UUID del packete de google se encuentra en un requets. Por
-// el momento aun es experimental, pero funciona para lo que se requiere.
-func (c *GooKitValidator) ValidateStruct(toValidate interface{}) error {
-	v := c.configuratedValidator(toValidate)
+// Este fue creado con el proposito de validar que un tipo uuid.UUID del paquete de google se encuentra en un request. Por
+// el momento aún es experimental, pero funciona para lo que se requiere.
+func (c *GooKitValidator) ValidateStruct(toValidate any, scene ...string) error {
+	v := c.GetConfiguredValidator(toValidate, scene...)
 	if v.Validate() {
 		return nil
 	}
@@ -41,8 +41,9 @@ func (c *GooKitValidator) Validate(i interface{}) error {
 	return c.ValidateStruct(i)
 }
 
-func (c *GooKitValidator) configuratedValidator(toValidate interface{}) *validate.Validation {
-	v := validate.Struct(toValidate) //nolint:varnamelen
+// GetConfiguredValidator returns validate.Validation instance with required_uuid validator
+func (c *GooKitValidator) GetConfiguredValidator(toValidate any, scene ...string) *validate.Validation {
+	v := validate.Struct(toValidate, scene...) //nolint:varnamelen
 	v.StopOnError = c.StopOnError
 	v.AddMessages(map[string]string{
 		"uuid":          uuidNotValidError,
