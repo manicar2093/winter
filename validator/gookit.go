@@ -21,14 +21,12 @@ func NewGooKitValidator() *GooKitValidator {
 	}
 }
 
-// ValidateStruct valida que la interface cumpla con los requisitos descritos por el tag validate. Si no lo hace se regresa
-// una lista de errores que se puede regresar al front. Más detalles ver la documentación del paquete gookit/validate.
+// ValidateStruct validates struct fulfill validate tags validations
 //
-// Se cuenta con un validador custom:
+// It adds a custom required validation:
 //   - required_uuid
 //
-// Este fue creado con el proposito de validar que un tipo uuid.UUID del paquete de google se encuentra en un request. Por
-// el momento aún es experimental, pero funciona para lo que se requiere.
+// This was created to validate uuid.UUID type from google UUID package.
 func (c *GooKitValidator) ValidateStruct(toValidate any, scene ...string) error {
 	v := c.GetConfiguredValidator(toValidate, scene...)
 	if v.Validate(scene...) {
