@@ -1,3 +1,9 @@
+## v0.6.0 (2025-02-01)
+
+### Feat
+
+- add common used structs
+
 ## v0.5.1 (2025-01-10)
 
 ### Fix
