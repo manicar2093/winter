@@ -1,3 +1,9 @@
+## v0.8.0 (2025-02-03)
+
+### Feat
+
+- add validations on page struct
+
 ## v0.7.0 (2025-02-03)
 
 ### Feat
