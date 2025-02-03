@@ -1,3 +1,9 @@
+## v0.7.0 (2025-02-03)
+
+### Feat
+
+- add register controllers methods
+
 ## v0.6.0 (2025-02-01)
 
 ### Feat
