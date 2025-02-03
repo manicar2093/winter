@@ -12,7 +12,7 @@ type (
 	}
 
 	PageData struct {
-		PageNumber int `header:"page_number" param:"page_number" form:"page_number" query:"page_number" json:"page_number"`
-		PageSize   int `header:"page_size" param:"page_size" form:"page_size" query:"page_size" json:"page_size"`
+		PageNumber int `header:"page_number" param:"page_number" form:"page_number" query:"page_number" json:"page_number" validate:"greaterThan:0"`
+		PageSize   int `header:"page_size" param:"page_size" form:"page_size" query:"page_size" json:"page_size" validate:"greaterThan:0"`
 	}
 )
